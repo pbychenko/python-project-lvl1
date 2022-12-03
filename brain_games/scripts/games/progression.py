@@ -12,7 +12,7 @@ def get_progression():
     length = randint(3, 10)
 
     for i in range(0, length):
-        progression.append(start + i * step)
+        progression.append(str(start + i * step))
 
     return progression
 
@@ -22,13 +22,14 @@ def flow():
     hide_element_number = randint(0, len(progression) - 1)
     buf = progression[:]
     buf[hide_element_number] = '..'
+    buf_to_str = ' '.join(buf)
 
-    print(f'Question: {buf}')
+    print(f'Question: {buf_to_str}')
     answer = prompt.string('Your answer: ')
 
     correct_answer = progression[hide_element_number]
 
-    return [int(answer), correct_answer]
+    return [answer, correct_answer]
 
 
 def run_game(name):
