@@ -9,7 +9,7 @@ def get_progression():
     progression = []
     start = randint(1, 10)
     step = randint(1, 5)
-    length = randint(3, 10)
+    length = randint(5, 10)
 
     for i in range(0, length):
         progression.append(str(start + i * step))
