@@ -1,5 +1,6 @@
 import prompt
 from random import randint
+from .game import run_app
 
 
 def get_progression():
@@ -13,31 +14,20 @@ def get_progression():
 
     return progression
 
+game_description = 'What number is missing in the progression?'
+
+def flow():
+    progression = get_progression()
+    hide_element_number = randint(0, len(progression) - 1)
+    buf = progression[:]
+    buf[hide_element_number] = '..'
+
+    print(f'Question: {buf}')
+    answer = prompt.string('Your answer: ')
+
+    correct_answer = progression[hide_element_number]
+
+    return [int(answer), correct_answer]
+
 def run_game(name):
-    print('What number is missing in the progression?')
-    attempts = 3
-
-    while attempts > 0: 
-        progression = get_progression()
-        hide_element_number = randint(0, len(progression) - 1)
-        buf = progression[:]
-        buf[hide_element_number] = '..'
-        # dev = ''
-        # t = dev.join(buf)
-
-        print(f'Question: {buf}')
-        answer = prompt.string('Your answer: ')
-
-        correct_answer = progression[hide_element_number]
-
-        if int(answer) == correct_answer:
-            print('Correct!')
-            attempts -= 1
-        else:
-            print(f'{answer} is wrong answer ;(. Correct answer was {correct_answer}.')
-            print(f'Let\'s try again, {name}!')
-            break
-    
-    if attempts == 0:
-        print(f'Congratulations, {name}!')
-    
+    run_app(game_description, flow, name)

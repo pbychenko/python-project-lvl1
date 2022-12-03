@@ -1,6 +1,7 @@
 import prompt
 from random import randint
 from math import sqrt
+from .game import run_app
 
 def isPrime(number):
     if number == 1:
@@ -17,25 +18,16 @@ def isPrime(number):
 
     return True
 
-def run_game(name):
-    print('Answer "yes" if the number is prime, otherwise answer "no".')
-    attempts = 3
+game_description = 'Answer "yes" if the number is prime, otherwise answer "no".'
 
-    while attempts > 0:        
-        number = randint(1, 100)
-        print(f'Question: {number}')
-        answer = prompt.string('Your answer: ')
-
-        correct_answer = 'yes' if isPrime(int(number)) else 'no'
-
-        if answer == correct_answer:
-            print('Correct!')
-            attempts -= 1
-        else:
-            print(f'{answer} is wrong answer ;(. Correct answer was {correct_answer}.')
-            print(f'Let\'s try again, {name}!')
-            break
+def flow():  
+    number = randint(1, 100)
+    print(f'Question: {number}')
+    answer = prompt.string('Your answer: ')
+    correct_answer = 'yes' if isPrime(int(number)) else 'no'
     
-    if attempts == 0:
-        print(f'Congratulations, {name}!')
+    return [answer, correct_answer]
+
+def run_game(name):
+    run_app(game_description, flow, name)
     
