@@ -2,6 +2,8 @@ import prompt
 from random import randint
 from .game import run_app
 
+game_description = 'What number is missing in the progression?'
+
 
 def get_progression():
     progression = []
@@ -14,7 +16,6 @@ def get_progression():
 
     return progression
 
-game_description = 'What number is missing in the progression?'
 
 def flow():
     progression = get_progression()
@@ -28,6 +29,7 @@ def flow():
     correct_answer = progression[hide_element_number]
 
     return [int(answer), correct_answer]
+
 
 def run_game(name):
     run_app(game_description, flow, name)

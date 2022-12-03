@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 
 from ..cli import welcome_user
-# from .games import runGame
 from .games.prime import run_game
 
 
@@ -10,6 +9,7 @@ def main():
     user_name = welcome_user()
 
     run_game(user_name)
+
 
 if __name__ == '__main__':
     main()
