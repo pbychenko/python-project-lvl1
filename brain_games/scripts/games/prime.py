@@ -3,7 +3,7 @@ from random import randint
 from math import sqrt
 from .game import run_app
 
-game_description = 'Answer "yes" if given number is prime. Otherwise answer "no".'
+game_desc = 'Answer "yes" if given number is prime. Otherwise answer "no".'
 
 
 def isPrime(number):
@@ -32,4 +32,4 @@ def flow():
 
 
 def run_game(name):
-    run_app(game_description, flow, name)
+    run_app(game_desc, flow, name)
