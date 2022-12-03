@@ -15,8 +15,8 @@ def gcd(a, b):
 
 
 def flow():
-    number1 = randint(0, 100)
-    number2 = randint(0, 100)
+    number1 = randint(1, 100)
+    number2 = randint(1, 100)
     print(f'Question: {number1} {number2}')
     answer = prompt.string('Your answer: ')
 
