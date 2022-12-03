@@ -3,7 +3,7 @@ from random import randint
 from math import sqrt
 from .game import run_app
 
-game_description = 'Answer "yes" if the number is prime, otherwise answer "no".'
+game_description = 'Answer "yes" if given number is prime. Otherwise answer "no".'
 
 
 def isPrime(number):
