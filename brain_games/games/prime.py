@@ -6,7 +6,7 @@ from ..engine.game import run_app
 game_desc = 'Answer "yes" if given number is prime. Otherwise answer "no".'
 
 
-def isPrime(number):
+def is_prime(number):
     if number < 2:
         return True
 
@@ -24,9 +24,11 @@ def isPrime(number):
 
 def flow():
     number = randint(1, 100)
+
+    number = 66
     print(f'Question: {number}')
     answer = prompt.string('Your answer: ')
-    correct_answer = 'yes' if isPrime(int(number)) else 'no'
+    correct_answer = 'yes' if is_prime(int(number)) else 'no'
 
     return [answer, correct_answer]
 
