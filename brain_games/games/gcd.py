@@ -1,11 +1,11 @@
 import prompt
 from random import randint
-from .game import run_app
+from ..engine.game import run_app
 
 game_description = 'Find the greatest common divisor of given numbers.'
 
 
-def gcd(a, b):
+def get_gcd(a, b):
     while a != b:
         if a > b:
             a = a - b
@@ -20,7 +20,7 @@ def flow():
     print(f'Question: {number1} {number2}')
     answer = prompt.string('Your answer: ')
 
-    correct_answer = gcd(number1, number2)
+    correct_answer = get_gcd(number1, number2)
 
     return [int(answer), correct_answer]
 

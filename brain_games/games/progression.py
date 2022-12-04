@@ -1,6 +1,6 @@
 import prompt
 from random import randint
-from .game import run_app
+from ..engine.game import run_app
 
 game_description = 'What number is missing in the progression?'
 

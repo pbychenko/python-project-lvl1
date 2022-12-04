@@ -1,13 +1,13 @@
 import prompt
 from random import randint
 from math import sqrt
-from .game import run_app
+from ..engine.game import run_app
 
 game_desc = 'Answer "yes" if given number is prime. Otherwise answer "no".'
 
 
 def isPrime(number):
-    if number == 1:
+    if number < 2:
         return True
 
     limit = sqrt(number)

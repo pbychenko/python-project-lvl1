@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 from ..cli import welcome_user
-from .games.gcd import run_game
+from ..games.gcd import run_game
 
 
 def main():
