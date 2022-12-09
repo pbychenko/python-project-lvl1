@@ -24,7 +24,7 @@ def is_prime(number):
 
 
 def flow():
-    number = randint(MIN, MAX)    
+    number = randint(MIN, MAX)
     print(f'Question: {number}')
     answer = prompt.string('Your answer: ')
     correct_answer = 'yes' if is_prime(int(number)) else 'no'
