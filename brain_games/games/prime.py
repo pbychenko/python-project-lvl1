@@ -1,6 +1,7 @@
 import prompt
 from random import randint
 from math import sqrt
+from ..utils import MIN, MAX
 from ..engine.game import run_app
 
 game_desc = 'Answer "yes" if given number is prime. Otherwise answer "no".'
@@ -23,9 +24,7 @@ def is_prime(number):
 
 
 def flow():
-    number = randint(1, 100)
-
-    number = 66
+    number = randint(MIN, MAX)    
     print(f'Question: {number}')
     answer = prompt.string('Your answer: ')
     correct_answer = 'yes' if is_prime(int(number)) else 'no'

@@ -1,5 +1,6 @@
 import prompt
 from random import randint
+from ..utils import MIN, MAX
 from ..engine.game import run_app
 
 game_description = 'What is the result of the expression?'
@@ -17,10 +18,10 @@ def calc(number1, op, number2):
 
 
 def flow():
-    first_number = randint(0, 100)
-    second_number = randint(0, 100)
+    first_number = randint(MIN, MAX)
+    second_number = randint(MIN, MAX)
     operations = ['+', '-', '*']
-    operation = operations[randint(0, 2)]
+    operation = operations[randint(0, len(operations) - 1)]
 
     print(f'Question: {first_number} {operation} {second_number} ')
     answer = prompt.string('Your answer: ')

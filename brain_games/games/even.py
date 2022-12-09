@@ -1,5 +1,6 @@
 import prompt
 from random import randint
+from ..utils import MIN, MAX
 from ..engine.game import run_app
 
 game_description = 'Answer "yes" if the number is even, otherwise answer "no".'
@@ -10,7 +11,7 @@ def is_even(number):
 
 
 def flow():
-    number = randint(0, 100)
+    number = randint(MIN, MAX)
     print(f'Question: {number}')
     answer = prompt.string('Your answer: ')
 

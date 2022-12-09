@@ -1,15 +1,16 @@
 import prompt
 from random import randint
 from ..engine.game import run_app
+from ..utils import MIN, MAX, PROGRESSION_MIN_LENGTH
 
 game_description = 'What number is missing in the progression?'
 
 
 def get_progression():
     progression = []
-    start = randint(1, 10)
-    step = randint(1, 5)
-    length = randint(5, 10)
+    start = randint(MIN, MAX)
+    step = randint(MIN, MAX)
+    length = randint(PROGRESSION_MIN_LENGTH, MAX)
 
     for i in range(0, length):
         progression.append(str(start + i * step))
